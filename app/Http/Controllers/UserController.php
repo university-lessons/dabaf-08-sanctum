@@ -15,8 +15,13 @@ class UserController extends Controller
         return view('profile', [ 'user' => User::first()] );
     }
 
-    public function find(string $id): View
+    public function find(Request $request): View
     {
-        return view('profile', [ 'user' => User::findOrFail($id)] );
+        $user = User::find($request->id);
+
+        if($user != null)
+            return view('profile', [ 'user' => $user] );
+        
+        return view('profile-not-found');
     }
 }
