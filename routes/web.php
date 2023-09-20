@@ -19,5 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile', [UserController::class, 'profile']);
-Route::get('/find/{id}', [UserController::class, 'find']);
+Route::controller(UserController::class)->group(function () {
+    Route::get('/profile', 'profile');
+    Route::get('/find/{id}', 'find');
+    Route::get('/create', 'new');
+    Route::post('/create-user', 'create');
+});
