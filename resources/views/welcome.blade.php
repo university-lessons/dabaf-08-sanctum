@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-    </head>
+    @include('shared.head')
+
     <body class="antialiased">
-        <a href="/profile">First Profile (GET example)</a>
-        <a href="/find/2">/find{id} example (with id = 2)</a>
-        <a href="/create">First Profile (GET example)</a>
+        <div class="container">
+
+            <h1>DABaF - Example App</h1>
+
+            <ul>
+                <li>
+                    <a href="/user/create">Create User</a>
+                </li>
+
+                <li>
+                    <a href="/user/search">Search User</a>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

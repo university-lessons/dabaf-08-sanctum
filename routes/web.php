@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\UserController;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +19,11 @@ Route::get('/', function () {
 });
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/profile', 'profile');
-    Route::get('/find/{id}', 'find');
-    Route::get('/create', 'new');
-    Route::post('/create-user', 'create');
+    Route::get('/user/create', 'create');
+    Route::post('/user/store', 'store');
+
+    Route::get('/user/search', 'search');
+    Route::post('/user/find', 'find');
+
+    Route::get('/user/{id}', 'show');
 });
