@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Actions\CreateUserAction;
 use App\Actions\FindUserAction;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -39,6 +40,8 @@ class UserController extends Controller
 
     public function find(Request $request)
     {
-        return redirect('/user/'.$request->id);
+        $user = User::where('name', 'like', '%'.$request->name.'%')->firstOrFail();
+
+        return redirect('/user/'.$user->id);
     }
 }

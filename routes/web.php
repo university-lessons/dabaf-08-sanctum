@@ -23,7 +23,7 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/user/store', 'store');
 
     Route::get('/user/search', 'search');
-    Route::post('/user/find', 'find');
+    Route::get('/user/search/{name}', 'find');
 
     Route::get('/user/{id}', 'show');
 });

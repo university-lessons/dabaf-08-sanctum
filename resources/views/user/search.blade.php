@@ -7,11 +7,11 @@
         <div class="container">
             <h1>Search User</h1>
 
-            <form method="POST" action="/user/find">
+            <form method="GET" action="/user/search/{name}">
                 @csrf
                 
                 <label for="name">Name</label>
-                <input id="id" name="id" type="text">
+                <input id="name" name="name" type="text">
 
                 <button type="submit">Submit</button>
             </form>
