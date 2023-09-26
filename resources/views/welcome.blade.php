@@ -8,6 +8,15 @@
 
             <h1>DABaF - Example App</h1>
 
+            @auth 
+                {{ Auth::user()->name }}
+
+                <form method="POST" action="{{route('logout')}}">
+                    @csrf
+                    <button type="submit">Logout</button>
+                </form>
+            @endauth
+
             <ul>
                 <li>
                     <a href="/user/create">Create User</a>
